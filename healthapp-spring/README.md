@@ -11,10 +11,12 @@ This app is created using Spring & Hibernate with database as MySQL. It is creat
 
 In order to test the app, do following:
 
- * Create a MySQL database with name, healthapp
- * Load the project in eclipse and run
+ * Create a MySQL database with name, **healthapp** and username/password as **root/root**
+ * Execute the command, **mvn spring-boot:run**
 
-Login with following user:
+Above would start the app at the port 8080. Goto browser and access URL such as **http://localhost:8080**
+
+Login with one of the following users:
 
 Doctor
 
@@ -25,3 +27,4 @@ Patient
 
  * Userid: anisha@gmail.com
  * Password: book 
+
