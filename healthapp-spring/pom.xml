@@ -110,8 +110,17 @@
 	        <snapshots>
 	            <enabled>true</enabled>
 	        </snapshots>
-	    </repository>
-	</repositories>
+	    </repository>	       
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
 	<build>
 		<plugins>
