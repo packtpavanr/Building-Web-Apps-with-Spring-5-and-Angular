@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     if (this.isLoggedIn) {
       const role = Cookie.get('role');
       if (role === 'ROLE_DOCTOR') {
-        this.router.navigate(['doctor/home']);
+        this.router.navigate(['rx']);
       } else {
         this.router.navigate(['patient/home']);
       }
