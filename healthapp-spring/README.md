@@ -20,7 +20,7 @@ Login with one of the following users:
 
 Doctor
 
- * Userid: ajitesh@gmail.com
+ * Userid: aiyana@gmail.com
  * Password: book
 
 Patient
