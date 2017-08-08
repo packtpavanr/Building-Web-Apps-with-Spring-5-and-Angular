@@ -40,7 +40,7 @@ public class Doctor  implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	@Column(name = "speciality_code") 
 	private String specialityCode;

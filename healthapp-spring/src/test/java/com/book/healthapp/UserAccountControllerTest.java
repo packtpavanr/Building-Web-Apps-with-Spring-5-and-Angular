@@ -24,6 +24,7 @@ import com.book.healthapp.configuration.CustomAuthenticationProvider;
 import com.book.healthapp.controllers.UserAccountController;
 import com.book.healthapp.domain.User;
 import com.book.healthapp.helpers.ExecutionStatus;
+import com.book.healthapp.services.DoctorService;
 import com.book.healthapp.services.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
@@ -36,11 +37,12 @@ public class UserAccountControllerTest {
 	@MockBean
 	private UserService userService;
 	@MockBean
-	private CustomAuthenticationProvider authProvider;
+	private DoctorService docService;
+	
 	
 	@BeforeEach
 	public void setUp(TestInfo testInfo) throws Exception {
-		this.mockMvc = MockMvcBuilders.standaloneSetup(new UserAccountController(this.userService, this.authProvider)).build();
+		this.mockMvc = MockMvcBuilders.standaloneSetup(new UserAccountController(this.userService, this.docService)).build();
 		String displayName = testInfo.getDisplayName();
 		assertTrue(displayName.equals("Should return error message for when user not existing in the database tries to login."));
 	}

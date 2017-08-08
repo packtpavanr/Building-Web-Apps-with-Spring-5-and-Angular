@@ -18,4 +18,6 @@ public interface DoctorDAO {
 	List<Doctor> findByHospital(String hospitalName);
 	
 	Doctor findByUserId(int userId);
+
+	Doctor save(Doctor doctor);
 }

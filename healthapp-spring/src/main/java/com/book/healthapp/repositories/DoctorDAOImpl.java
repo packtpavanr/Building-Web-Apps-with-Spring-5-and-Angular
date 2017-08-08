@@ -71,4 +71,12 @@ public class DoctorDAOImpl implements DoctorDAO {
         return count;
 	}
 
+	@Override
+	public Doctor save(Doctor doctor) {
+		Session session = this.sessionFactory.openSession();
+		session.save(doctor);
+		session.close();
+		return doctor;
+	}
+
 }

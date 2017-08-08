@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.book.healthapp.domain.Doctor;
+import com.book.healthapp.domain.User;
 
 
 public interface DoctorService {
@@ -23,4 +24,6 @@ public interface DoctorService {
 	int findCount();
 	
 	Doctor findByUserId(int userId);
+
+	void addDoctor(User user);
 }

@@ -36,6 +36,7 @@ import com.book.healthapp.domain.User;
 import com.book.healthapp.exceptions.UnmatchingUserCredentialsException;
 import com.book.healthapp.exceptions.UserNotFoundException;
 import com.book.healthapp.helpers.ExecutionStatus;
+import com.book.healthapp.services.DoctorService;
 import com.book.healthapp.services.UserService;
 
 @RestController
@@ -45,10 +46,12 @@ public class UserAccountController {
 	final static Logger logger = LoggerFactory.getLogger(UserAccountController.class);
 	
 	UserService userService;	
+	DoctorService docService;
 	
 	@Autowired
-	public UserAccountController(UserService userService, CustomAuthenticationProvider authProvider) {
+	public UserAccountController(UserService userService, DoctorService docService) {
 		this.userService = userService;
+		this.docService = docService;
 	}
 	
 	@GetMapping(value="/token")
@@ -80,6 +83,11 @@ public class UserAccountController {
 		user.setGender(reqUser.getGender());
 		user.setRole(reqUser.getRole());
 		User persistedUser = userService.save(user);
+		//
+		// Add entry in doctor table if user is a doctor
+		//
+		docService.addDoctor(user);
+		
 		return new ExecutionStatus("USER_ACCOUNT_CREATED", "User account successfully created");
 	}
 	

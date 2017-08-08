@@ -70,4 +70,14 @@ public class DoctorServiceImpl implements DoctorService {
 		return null;
 	}
 
+	@Override
+	public void addDoctor(User user) {
+		if(user.getRole() == 1) {
+			Doctor doctor = new Doctor();
+			doctor.setUser(user);
+			doctor.setSpecialityCode("PHYSICIAN");
+			doctorDAO.save(doctor);
+		}
+	}
+
 }
