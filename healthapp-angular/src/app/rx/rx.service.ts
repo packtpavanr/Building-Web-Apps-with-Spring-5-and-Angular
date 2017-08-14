@@ -14,7 +14,7 @@ export class RxService {
 
   getRx(): Observable<Rx[]> {
     let headers = new Headers({
-      'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
+      'Content-type': 'application/json',
       'Authorization': 'Bearer ' + Cookie.get('access_token')
     });
 

@@ -1,5 +1,4 @@
 import {NgModule}      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
@@ -14,9 +13,10 @@ import { SecurityBypass } from './pipes/security-bypass.pipe';
 import { HttpModule } from '@angular/http';
 import { UserModule } from './patient/user.module';
 import { RxModule } from './rx/rx.module';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, AuthModule, HttpModule, DocModule, UserModule, RxModule,
+  imports:      [ CommonModule, FormsModule, AuthModule, HttpModule, DocModule, UserModule, RxModule,
     AppRoutingModule, ],
   declarations: [ AppComponent, PageNotFoundComponent, HomeComponent, SecurityBypass],
   bootstrap:    [ AppComponent ]

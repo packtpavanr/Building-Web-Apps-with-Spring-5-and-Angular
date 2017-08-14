@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
 
-import {Login, LoginStatus, SignupStatus, User} from './login';
-import {AuthService} from "./auth.service";
-import {Router} from "@angular/router";
-import {Observable} from "rxjs/Observable";
+import {Login, LoginStatus} from './login';
+import {AuthService} from './auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'login',

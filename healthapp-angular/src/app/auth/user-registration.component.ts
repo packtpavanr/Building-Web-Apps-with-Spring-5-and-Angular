@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import {NewUser, SignupStatus, User} from './login';
+import {NewUser, SignupStatus} from './login';
 import {AuthService} from './auth.service';
 
 @Component({
