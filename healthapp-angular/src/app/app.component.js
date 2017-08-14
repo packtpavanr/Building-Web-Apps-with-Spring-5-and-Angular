@@ -30,7 +30,7 @@ var AppComponent = (function () {
         if (this.isLoggedIn) {
             var role = ng2_cookies_1.Cookie.get('role');
             if (role === 'ROLE_DOCTOR') {
-                this.router.navigate(['doctor/home']);
+                this.router.navigate(['rx']);
             }
             else {
                 this.router.navigate(['patient/home']);

@@ -34,4 +34,3 @@ export class LoginStatus {
     public message: string
   ) { }
 }
-

@@ -21,7 +21,7 @@ var RxService = (function () {
     }
     RxService.prototype.getRx = function () {
         var headers = new http_1.Headers({
-            'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
+            'Content-type': 'application/json',
             'Authorization': 'Bearer ' + ng2_cookies_1.Cookie.get('access_token')
         });
         return this.http.get(this.rxUrl, { headers: headers })

@@ -7,7 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var app_routing_module_1 = require("./app-routing.module");
@@ -19,12 +18,13 @@ var security_bypass_pipe_1 = require("./pipes/security-bypass.pipe");
 var http_1 = require("@angular/http");
 var user_module_1 = require("./patient/user.module");
 var rx_module_1 = require("./rx/rx.module");
+var common_1 = require("@angular/common");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, auth_module_1.AuthModule, http_1.HttpModule, doc_module_1.DocModule, user_module_1.UserModule, rx_module_1.RxModule,
+            imports: [common_1.CommonModule, forms_1.FormsModule, auth_module_1.AuthModule, http_1.HttpModule, doc_module_1.DocModule, user_module_1.UserModule, rx_module_1.RxModule,
                 app_routing_module_1.AppRoutingModule,],
             declarations: [app_component_1.AppComponent, page_not_found_component_1.PageNotFoundComponent, home_component_1.HomeComponent, security_bypass_pipe_1.SecurityBypass],
             bootstrap: [app_component_1.AppComponent]
