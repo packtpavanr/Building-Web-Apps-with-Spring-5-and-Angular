@@ -4,7 +4,7 @@
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsc -p src/",
+    "build": "npm run clean && tsc -p src/",
     "build:watch": "tsc -p src/ -w",
     "build:e2e": "tsc -p e2e/",
     "serve": "lite-server -c=bs-config.json",
@@ -20,7 +20,7 @@
     "pretest:once": "npm run build",
     "test:once": "karma start karma.conf.js --single-run",
     "lint": "tslint ./src/**/*.ts -t verbose",
-    "build_prod": "npm run build && browserify -s main src/main.js > dist/bundle.js && npm run minify",
+    "build_prod": "npm run build && mkdir dist && browserify -s main src/main.js > dist/bundle.js && npm run minify",
     "minify": "uglifyjs dist/bundle.js --screw-ie8 --compress --mangle --output dist/bundle.min.js"
 
   },

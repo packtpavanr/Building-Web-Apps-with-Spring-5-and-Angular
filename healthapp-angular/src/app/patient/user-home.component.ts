@@ -8,6 +8,7 @@ import {Rx} from '../rx/rx';
 })
 export class UserHomeComponent implements OnInit {
   rxlist: Rx[];
+  errorMessage: string;
 
   constructor(private rxService: RxService) {}
 

@@ -14,9 +14,11 @@ import { HttpModule } from '@angular/http';
 import { UserModule } from './patient/user.module';
 import { RxModule } from './rx/rx.module';
 import {CommonModule} from '@angular/common';
+import {PipeModule} from './pipes/pipe-module';
+import {RouterStubModule} from './testing/router-stub.module';
 
 @NgModule({
-  imports:      [ CommonModule, FormsModule, AuthModule, HttpModule, DocModule, UserModule, RxModule,
+  imports:      [ CommonModule, FormsModule, PipeModule, AuthModule, HttpModule, DocModule, UserModule, RxModule, RouterStubModule,
     AppRoutingModule, ],
   declarations: [ AppComponent, PageNotFoundComponent, HomeComponent, SecurityBypass],
   bootstrap:    [ AppComponent ]
