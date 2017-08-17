@@ -28,6 +28,10 @@ export class AuthService {
     );
   }
 
+  checkLoginStatus(): Observable<boolean> {
+    return this.isLoggedIn;
+  }
+
   signup(newUser: NewUser): Promise<SignupStatus> {
     const url = `${this.serverUrl}/account/signup`;
     const options       = new RequestOptions({ headers: this.headers });

@@ -5,8 +5,6 @@ import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AuthService } from './auth/auth.service';
-import {RouterStub} from './testing/router-stubs';
-import {Router} from '@angular/router';
 import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AppComponent', function () {

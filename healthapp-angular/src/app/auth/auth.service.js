@@ -31,6 +31,9 @@ var AuthService = (function () {
             return _this.observer = observer;
         });
     }
+    AuthService.prototype.checkLoginStatus = function () {
+        return this.isLoggedIn;
+    };
     AuthService.prototype.signup = function (newUser) {
         var url = this.serverUrl + "/account/signup";
         var options = new http_1.RequestOptions({ headers: this.headers });
