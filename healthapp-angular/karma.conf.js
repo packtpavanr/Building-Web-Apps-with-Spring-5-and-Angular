@@ -56,6 +56,15 @@ module.exports = function(config) {
       { pattern: 'node_modules/@angular/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
 
+      // ng2-cookies
+      { pattern: 'node_modules/ng2-cookies/*.js', included: false, watched: false },
+      { pattern: 'node_modules/ng2-cookies/*.js.map', included: false, watched: false },
+
+      // tslib
+      { pattern: 'node_modules/tslib/*.js', included: false, watched: false },
+      { pattern: 'node_modules/tslib/*.js.map', included: false, watched: false },
+
+
       { pattern: appBase + '/systemjs.config.js', included: false, watched: false },
       { pattern: appBase + '/systemjs.config.extras.js', included: false, watched: false },
       'karma-test-shim.js', // optionally extend SystemJS mapping e.g., with barrels
