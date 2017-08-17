@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute }   from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/switchMap';
 
 import {Doctor} from './doctor';
@@ -18,8 +17,7 @@ export class DoctorListComponent  implements OnInit {
 
   constructor (private doctorService: DoctorService,
                private router: Router,
-               private route: ActivatedRoute,
-               private httpClient: HttpClient) {
+               private route: ActivatedRoute) {
     this.doctors = new Array();
   }
 

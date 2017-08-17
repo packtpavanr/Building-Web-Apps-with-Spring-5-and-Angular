@@ -11,15 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var http_1 = require("@angular/common/http");
 require("rxjs/add/operator/switchMap");
 var doctor_service_1 = require("./doctor.service");
 var DoctorListComponent = (function () {
-    function DoctorListComponent(doctorService, router, route, httpClient) {
+    function DoctorListComponent(doctorService, router, route) {
         this.doctorService = doctorService;
         this.router = router;
         this.route = route;
-        this.httpClient = httpClient;
         this.doctors = new Array();
     }
     DoctorListComponent.prototype.ngOnInit = function () {
@@ -42,8 +40,7 @@ var DoctorListComponent = (function () {
         }),
         __metadata("design:paramtypes", [doctor_service_1.DoctorService,
             router_1.Router,
-            router_1.ActivatedRoute,
-            http_1.HttpClient])
+            router_1.ActivatedRoute])
     ], DoctorListComponent);
     return DoctorListComponent;
 }());
