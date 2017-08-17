@@ -17,9 +17,9 @@ describe('DoctorListComponent', function () {
       imports: [ HttpModule ],
       declarations: [ DoctorListComponent ],
       providers:    [
-        { provide: DoctorService, useClass: {} },
+        { provide: DoctorService, useValue: {} },
         { provide: Router, useClass: RouterStub },
-        { provide: ActivatedRoute, useClass: ActivatedRouteStub },
+        { provide: ActivatedRoute, useValue: ActivatedRouteStub },
         ],
     })
       .compileComponents();
@@ -37,11 +37,11 @@ describe('DoctorListComponent', function () {
       const spy = spyOn(router, 'navigateByUrl');
       comp.onSelect('PHYSICIAN');
       let navArgs = spy.calls.first().args[0];
-      expect(navArgs).toBe('doctors/PHYSICIAN');
+      expect(navArgs).toBe('doctor/PHYSICIAN');
 
       comp.onSelect('PEDIATRICIAN');
       navArgs = spy.calls.mostRecent().args[0];
-      expect(navArgs).toBe('doctors/PEDIATRICIAN');
+      expect(navArgs).toBe('doctor/PEDIATRICIAN');
     }));
 
 });

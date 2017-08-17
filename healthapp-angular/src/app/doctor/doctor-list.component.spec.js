@@ -14,9 +14,9 @@ describe('DoctorListComponent', function () {
             imports: [http_1.HttpModule],
             declarations: [doctor_list_component_1.DoctorListComponent],
             providers: [
-                { provide: doctor_service_1.DoctorService, useClass: {} },
+                { provide: doctor_service_1.DoctorService, useValue: {} },
                 { provide: router_1.Router, useClass: router_stubs_1.RouterStub },
-                { provide: router_1.ActivatedRoute, useClass: router_stubs_1.ActivatedRouteStub },
+                { provide: router_1.ActivatedRoute, useValue: router_stubs_1.ActivatedRouteStub },
             ],
         })
             .compileComponents();
@@ -29,10 +29,10 @@ describe('DoctorListComponent', function () {
         var spy = spyOn(router, 'navigateByUrl');
         comp.onSelect('PHYSICIAN');
         var navArgs = spy.calls.first().args[0];
-        expect(navArgs).toBe('doctors/PHYSICIAN');
+        expect(navArgs).toBe('doctor/PHYSICIAN');
         comp.onSelect('PEDIATRICIAN');
         navArgs = spy.calls.mostRecent().args[0];
-        expect(navArgs).toBe('doctors/PEDIATRICIAN');
+        expect(navArgs).toBe('doctor/PEDIATRICIAN');
     }));
 });
 //# sourceMappingURL=doctor-list.component.spec.js.map
