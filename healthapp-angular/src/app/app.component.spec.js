@@ -6,6 +6,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var auth_service_1 = require("./auth/auth.service");
 var router_stubs_1 = require("./testing/router-stubs");
 var router_1 = require("@angular/router");
+var testing_2 = require("@angular/router/testing");
 describe('AppComponent', function () {
     var de;
     var comp;
@@ -19,7 +20,7 @@ describe('AppComponent', function () {
         };
         testing_1.TestBed.configureTestingModule({
             imports: [
-                testing_1.RouterTestingModule
+                testing_2.RouterTestingModule
             ],
             declarations: [app_component_1.AppComponent],
             providers: [{ provide: auth_service_1.AuthService, useValue: authServiceStub },

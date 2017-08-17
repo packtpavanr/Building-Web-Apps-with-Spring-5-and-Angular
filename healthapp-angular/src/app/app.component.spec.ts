@@ -1,12 +1,13 @@
 import { AppComponent } from './app.component';
 
-import { async, ComponentFixture, TestBed, RouterTestingModule } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AuthService } from './auth/auth.service';
 import {RouterStub} from './testing/router-stubs';
 import {Router} from '@angular/router';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AppComponent', function () {
   let de: DebugElement;
