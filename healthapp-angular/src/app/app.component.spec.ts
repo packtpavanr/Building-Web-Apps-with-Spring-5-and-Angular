@@ -6,6 +6,7 @@ import { DebugElement } from '@angular/core';
 
 import { AuthService } from './auth/auth.service';
 import {RouterTestingModule} from '@angular/router/testing';
+import {Observable} from 'rxjs/Observable';
 
 describe('AppComponent', function () {
   let de: DebugElement;
@@ -17,8 +18,7 @@ describe('AppComponent', function () {
   beforeEach(async(() => {
 
     authServiceStub = {
-      isLoggedIn: false,
-      user: {name: 'Micky'}
+      isLoggedIn: Observable.of(true)
     };
 
     TestBed.configureTestingModule({
@@ -26,31 +26,31 @@ describe('AppComponent', function () {
         RouterTestingModule
       ],
       declarations: [ AppComponent ],
-      providers:    [ {provide: AuthService, useValue: authServiceStub }
+      providers:    [ {provide: AuthService, useValue : authServiceStub }
       ]
     })
     .compileComponents()
     .then(() => {
       fixture = TestBed.createComponent(AppComponent);
       comp = fixture.componentInstance;
-      de = fixture.debugElement.query(By.css('h1'));
+      de = fixture.debugElement.query(By.css('h3'));
       authService = fixture.debugElement.injector.get(AuthService);
     });
   }));
 
   it('should create component', () => expect(comp).toBeDefined() );
 
-  it('should have expected <h1> text', () => {
+  it('should have expected <h3> text', () => {
     fixture.detectChanges();
-    const h1 = de.nativeElement;
-    expect(h1.innerText).toMatch('Welcome to ' + comp.appName);
+    const h3 = de.nativeElement;
+    expect(h3.innerText).toMatch(comp.appName);
   });
 
   it('should display a different app name', () => {
     comp.appName = 'Test HealthApp';
     fixture.detectChanges();
-    const h1 = de.nativeElement;
-    expect(h1.innerText).toMatch('Welcome to ' + comp.appName);
+    const h3 = de.nativeElement;
+    expect(h3.innerText).toMatch(comp.appName);
   });
 
 });

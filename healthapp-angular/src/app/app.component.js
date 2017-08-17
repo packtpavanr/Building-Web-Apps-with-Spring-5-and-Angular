@@ -23,7 +23,7 @@ var AppComponent = (function () {
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.authService.isLoggedIn.subscribe(function (loginStatus) {
-            _this.isLoggedIn = loginStatus;
+            return _this.isLoggedIn = loginStatus;
         });
     };
     AppComponent.prototype.myHome = function () {

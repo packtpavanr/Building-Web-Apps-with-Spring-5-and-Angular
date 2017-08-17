@@ -5,6 +5,7 @@ var testing_1 = require("@angular/core/testing");
 var platform_browser_1 = require("@angular/platform-browser");
 var auth_service_1 = require("./auth/auth.service");
 var testing_2 = require("@angular/router/testing");
+var Observable_1 = require("rxjs/Observable");
 describe('AppComponent', function () {
     var de;
     var comp;
@@ -13,8 +14,7 @@ describe('AppComponent', function () {
     var authServiceStub;
     beforeEach(testing_1.async(function () {
         authServiceStub = {
-            isLoggedIn: false,
-            user: { name: 'Micky' }
+            isLoggedIn: Observable_1.Observable.of(true)
         };
         testing_1.TestBed.configureTestingModule({
             imports: [
@@ -28,21 +28,21 @@ describe('AppComponent', function () {
             .then(function () {
             fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
             comp = fixture.componentInstance;
-            de = fixture.debugElement.query(platform_browser_1.By.css('h1'));
+            de = fixture.debugElement.query(platform_browser_1.By.css('h3'));
             authService = fixture.debugElement.injector.get(auth_service_1.AuthService);
         });
     }));
     it('should create component', function () { return expect(comp).toBeDefined(); });
-    it('should have expected <h1> text', function () {
+    it('should have expected <h3> text', function () {
         fixture.detectChanges();
-        var h1 = de.nativeElement;
-        expect(h1.innerText).toMatch('Welcome to ' + comp.appName);
+        var h3 = de.nativeElement;
+        expect(h3.innerText).toMatch(comp.appName);
     });
     it('should display a different app name', function () {
         comp.appName = 'Test HealthApp';
         fixture.detectChanges();
-        var h1 = de.nativeElement;
-        expect(h1.innerText).toMatch('Welcome to ' + comp.appName);
+        var h3 = de.nativeElement;
+        expect(h3.innerText).toMatch(comp.appName);
     });
 });
 //# sourceMappingURL=app.component.spec.js.map
