@@ -28,8 +28,7 @@ describe('AppComponent', function () {
         RouterTestingModule
       ],
       declarations: [ AppComponent ],
-      providers:    [ {provide: AuthService, useValue: authServiceStub },
-        { provide: Router, useClass: RouterStub },
+      providers:    [ {provide: AuthService, useValue: authServiceStub }
       ]
     })
     .compileComponents()

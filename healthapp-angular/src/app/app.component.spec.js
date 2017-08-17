@@ -4,8 +4,6 @@ var app_component_1 = require("./app.component");
 var testing_1 = require("@angular/core/testing");
 var platform_browser_1 = require("@angular/platform-browser");
 var auth_service_1 = require("./auth/auth.service");
-var router_stubs_1 = require("./testing/router-stubs");
-var router_1 = require("@angular/router");
 var testing_2 = require("@angular/router/testing");
 describe('AppComponent', function () {
     var de;
@@ -23,8 +21,7 @@ describe('AppComponent', function () {
                 testing_2.RouterTestingModule
             ],
             declarations: [app_component_1.AppComponent],
-            providers: [{ provide: auth_service_1.AuthService, useValue: authServiceStub },
-                { provide: router_1.Router, useClass: router_stubs_1.RouterStub },
+            providers: [{ provide: auth_service_1.AuthService, useValue: authServiceStub }
             ]
         })
             .compileComponents()
