@@ -14,6 +14,11 @@
 --/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 --/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 --/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+DROP DATABASE IF EXISTS `healthapp`;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `healthapp` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `healthapp`;
+
 --
 ----
 ---- Table structure for table `ClientDetails`
@@ -57,7 +62,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(250) NOT NULL,
   `first_name` varchar(20) NOT NULL,
   `last_name` varchar(20) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,

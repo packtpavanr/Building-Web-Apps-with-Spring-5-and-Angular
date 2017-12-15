@@ -21,10 +21,10 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<junit.version>4.12</junit.version>
-        <junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
-        <junit.vintage.version>${junit.version}.0-M4</junit.vintage.version>
-        <junit.platform.version>1.0.0-M4</junit.platform.version>
-        <mockito.version>1.10.19</mockito.version>
+        <junit.jupiter.version>5.0.0</junit.jupiter.version>
+        <junit.vintage.version>${junit.version}.0</junit.vintage.version>
+        <junit.platform.version>1.0.0</junit.platform.version>
+        <mockito.version>2.9.0</mockito.version>
 	</properties>
 
 	<dependencies>
@@ -50,30 +50,31 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-surefire-provider</artifactId>
-            <version>${junit.platform.version}</version>
-        </dependency>
-        
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <version>${junit.vintage.version}</version>
-            <scope>test</scope>
-        </dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-engine</artifactId>
+         <version>${junit.jupiter.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <!-- To run tests on IDE such as Eclipse, Intellij -->
+      <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>${junit.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.junit.platform</groupId>
+         <artifactId>junit-platform-runner</artifactId>
+         <version>${junit.platform.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.junit.vintage</groupId>
+         <artifactId>junit-vintage-engine</artifactId>
+         <version>${junit.vintage.version}</version>
+         <scope>test</scope>
+      </dependency>
         <dependency>
 		    <groupId>org.mockito</groupId>
 		    <artifactId>mockito-core</artifactId>
@@ -100,17 +101,17 @@
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-config</artifactId>
 		    <version>4.2.3.RELEASE</version>
-		</dependency>		
+		</dependency>
+			
 	</dependencies>
 	<repositories>
-	    <repository>
-	        <id>spring-snapshots</id>
-	        <name>Spring Snapshots</name>
-	        <url>https://repo.spring.io/libs-snapshot</url>
-	        <snapshots>
-	            <enabled>true</enabled>
-	        </snapshots>
-	    </repository>	       
+        <repository>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -149,20 +150,10 @@
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>${junit.platform.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.junit.jupiter</groupId>
-                        <artifactId>junit-jupiter-engine</artifactId>
-                        <version>${junit.jupiter.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.junit.vintage</groupId>
-                        <artifactId>junit-vintage-engine</artifactId>
-                        <version>${junit.vintage.version}</version>
-                    </dependency>
+	                  <groupId>org.junit.platform</groupId>
+	                  <artifactId>junit-platform-surefire-provider</artifactId>
+	                  <version>${junit.platform.version}</version>
+	               </dependency>
                 </dependencies>
             </plugin>
 		</plugins>
