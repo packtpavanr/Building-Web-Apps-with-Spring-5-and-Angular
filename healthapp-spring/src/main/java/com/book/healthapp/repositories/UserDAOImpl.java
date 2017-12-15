@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +30,6 @@ public class UserDAOImpl implements UserDAO {
     	Session session = this.sessionFactory.getCurrentSession();
         TypedQuery<User> query = session.getNamedQuery("findByEmail");  
         query.setParameter("email", email);
-//    	Query query = session.getNamedQuery("findByEmail");
-//    	query.setString("email", email);
         return query.getResultList();
 	}
 
@@ -73,7 +70,7 @@ public class UserDAOImpl implements UserDAO {
 //		user.setPassword(persistentUser.getPassword());
 //		session.merge(user);		
 //		tx2.commit();
-		
-		
 	}
+
+	
 }
