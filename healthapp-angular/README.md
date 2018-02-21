@@ -10,6 +10,12 @@ This app is created for demonstrating different concepts in Angular including so
 
 The app is created using Angular-CLI. It can be run using command such as npm start. Tests can be run using command such as npm test.
 
+First and foremost, install NPM modules by executing following command:
+
+```
+npm install
+```
+
 In order to run the app, execute the following command. This would open up the app in browser with URL as http://localhost:4200/
 
 ```
